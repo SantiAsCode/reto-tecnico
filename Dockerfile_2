@@ -1,0 +1,28 @@
+FROM php:8.2-fpm
+
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    libzip-dev \
+    libonig-dev \
+    libxml2-dev \
+    unzip \
+    supervisor \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql zip bcmath opcache pcntl
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+WORKDIR /var/www/alegra
+
+COPY . .
+COPY ./deploy-files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+RUN composer install --no-interaction --no-scripts --no-autoloader --no-dev
+RUN composer dumpautoload --optimize --classmap-authoritative
+RUN pecl install swoole && docker-php-ext-enable swoole
+
+ENTRYPOINT [ "./deploy-files/deploy_2.sh" ]
+
+EXPOSE 8000
