@@ -23,5 +23,5 @@ Route::get('/get-restaurant-status',  [ManagerController::class, 'getRestaurantS
 Route::get('/get-current-order',      [ManagerController::class, 'getCurrentOrder']);
 Route::get('/get-order-list',         [ManagerController::class, 'getOrderList']);
 Route::get('/get-ingredients-stocks', [ManagerController::class, 'getIngredientsStocks']);
-Route::get('/get-market-trasactions',  [ManagerController::class, 'getMarketTrasactions']);
+Route::get('/get-market-trasactions', [ManagerController::class, 'getMarketTrasactions']);
 Route::get('/get-recipes-menu',       [ManagerController::class, 'getRecipesMenu']);

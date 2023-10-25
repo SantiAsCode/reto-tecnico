@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Livewire;
 
 use Livewire\Component;
 // use Livewire\Attributes\Reactive;
@@ -13,8 +13,10 @@ class MarketTransactions extends Component
 
     public function fetchData()
     {
-        $this->market_trasactions = json_decode(Http::get(config('app.manager')."/api/get-market-trasactions"))?->market_history;
-        // $this->market_trasactions = Http::get("https://".config('app.manager')."/api/get-market-trasactions")->json();
+        $response = Http::get(config('app.manager')."/api/get-market-trasactions")->json();
+        if ($response != null) {
+            $this->market_trasactions = $response['market_history'];
+        }
     }
 
     public function mount()

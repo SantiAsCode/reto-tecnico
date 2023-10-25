@@ -27,7 +27,6 @@
             <div class="scale-100 p-6 mb-6 mx-2 bg-gray-800/50 bg-gradient-to-bl from-gray-700/50 via-transparent ring-1 ring-inset ring-white/5 rounded-lg shadow-none flex flex-col motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                 <h2 class="mb-4 text-xl font-semibold text-white">Menú</h2>
                 <livewire:recipes-menu />
-                
             </div>
         </div>
     </div>

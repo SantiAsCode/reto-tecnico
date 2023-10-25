@@ -16,16 +16,16 @@
         </thead>
         <tbody class="overflow-y-scroll">
             <tr class=" border-t bg-gray-800 border-gray-700 hover:bg-gray-600">
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->tomato ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->lemon ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->potato ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->rice ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->ketchup ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->lettuce ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->onion ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->cheese ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->meat ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $ingredients_stocks->chicken ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['tomato'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['lemon'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['potato'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['rice'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['ketchup'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['lettuce'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['onion'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['cheese'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['meat'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $ingredients_stocks['chicken'] ?? 0 }}</td>
             </tr>
         </tbody>
     </table>

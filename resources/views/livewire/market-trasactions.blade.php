@@ -11,9 +11,9 @@
             @if ($market_trasactions != [])
             @foreach($market_trasactions as $transaction)
             <tr class="border-t bg-gray-800 border-gray-700 hover:bg-gray-600">
-                <td class="px-6 py-4 text-center">{{ App\Models\Ingredient::NAME_TRANSLATE[$transaction->ingredient_name ?? "tomato"] }}</td>
-                <td class="px-6 py-4 text-center">{{ $transaction->quantity ?? 0 }}</td>
-                <td class="px-6 py-4 text-center">{{ $transaction->created_at ?? "" }}</td>
+                <td class="px-6 py-4 text-center">{{ App\Models\Ingredient::NAME_TRANSLATE[$transaction['ingredient_name'] ?? "tomato"] }}</td>
+                <td class="px-6 py-4 text-center">{{ $transaction['quantity'] ?? 0 }}</td>
+                <td class="px-6 py-4 text-center">{{ $transaction['created_at'] ?? "" }}</td>
             </tr>
             @endforeach
             @endif

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Livewire;
 
 use Livewire\Component;
 // use Livewire\Attributes\Reactive;
@@ -9,12 +9,18 @@ use Illuminate\Support\Facades\Http;
 class RecipesMenu extends Component
 {
     // #[Reactive]
-    public $recipes_menu;
+    public $recipes_menu = null;
 
     public function fetchData()
     {
-        $this->recipes_menu = json_decode(Http::get(config('app.manager')."/api/get-recipes-menu"))?->menu;
-        // $this->recipes_menu = Http::get("https://".config('app.manager')."/api/get-recipes-menu")->json();
+        while ($this->recipes_menu == null) {
+            $response = Http::get(config('app.manager')."/api/get-recipes-menu")->json();
+            if ($response != null) {
+                $this->recipes_menu = $response['menu'];
+            } else {
+                sleep(5);
+            }
+        }
     }
 
     public function mount()

@@ -9,6 +9,6 @@
     </head>
     <body>
         @yield('content')
-        @livewireScripts 
+        @livewireScripts
     </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Livewire;
 
 use Livewire\Component;
 // use Livewire\Attributes\Reactive;
@@ -13,7 +13,10 @@ class OrderList extends Component
 
     public function fetchData()
     {
-        $this->order_list = json_decode(Http::get(config('app.manager')."/api/get-order-list"))->order_list;
+        $response = Http::get(config('app.manager')."/api/get-order-list")->json();
+        if ($response != null) {
+            $this->order_list = $response['order_list'];
+        }
     }
 
     public function mount()

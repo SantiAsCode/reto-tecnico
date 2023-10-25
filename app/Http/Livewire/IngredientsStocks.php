@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Http\Livewire;
 
 use Livewire\Component;
 // use Livewire\Attributes\Reactive;
@@ -13,8 +13,10 @@ class IngredientsStocks extends Component
 
     public function fetchData()
     {
-        $this->ingredients_stocks = json_decode(Http::get(config('app.manager')."/api/get-ingredients-stocks"))?->ingredients_stocks;
-        // $this->ingredients_stocks = Http::get("https://".config('app.manager')."/api/get-ingredient-stocks")->json();
+        $response = Http::get(config('app.manager')."/api/get-ingredients-stocks")->json();
+        if ($response != null) {
+            $this->ingredients_stocks = $response['ingredients_stocks'];
+        }
     }
 
     public function mount()
