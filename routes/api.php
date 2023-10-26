@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 // Kitchen API
 Route::get('/queue-an-order', [KitcherController::class, 'queueAnOrder']);
+Route::get('/reset-day',      [KitcherController::class, 'resetDay']);
 
 // Manager API
 Route::get('/get-restaurant-status',  [ManagerController::class, 'getRestaurantStatus']);

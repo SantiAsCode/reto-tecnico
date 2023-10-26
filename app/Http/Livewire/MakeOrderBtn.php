@@ -12,11 +12,6 @@ class MakeOrderBtn extends Component
     {
         try {
             $response = Http::get(config('app.kitchen')."/api/queue-an-order");
-            if ($response->successful()) {
-                Log::channel('restaurant')->info("App\Livewire\MakeOrderBtn::makeOrder() SUCCESSFULLY QUEUED");
-            } else {
-                Log::channel('restaurant')->error("App\Livewire\MakeOrderBtn::makeOrder() FAILED TO QUEUE");
-            }
         } catch (\Throwable $th) {
             Log::channel('restaurant')->error("App\Livewire\MakeOrderBtn::makeOrder() ERROR:{$th}");
         }

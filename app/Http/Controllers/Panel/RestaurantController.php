@@ -13,9 +13,4 @@ class RestaurantController extends Controller
     {
         return view('livewire.dashboard');
     }
-
-    public function oldDashboard()
-    {
-        return view('dashboard');
-    }
 }

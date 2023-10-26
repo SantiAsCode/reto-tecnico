@@ -9,7 +9,10 @@
         </div>
         <div>
             <div class="relative h-fit scale-100 p-6 mb-6 mx-2 bg-gray-800/50 bg-gradient-to-bl from-gray-700/50 via-transparent ring-1 ring-inset ring-white/5 rounded-lg shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                <livewire:make-order-btn />
+                <div>
+                    <livewire:make-order-btn />
+                    <livewire:reset-day-btn />
+                </div>
                 <livewire:current-order />
             </div>
             <div class="scale-100 p-6 mb-6 mx-2 bg-gray-800/50 bg-gradient-to-bl from-gray-700/50 via-transparent ring-1 ring-inset ring-white/5 rounded-lg shadow-none flex flex-col motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">

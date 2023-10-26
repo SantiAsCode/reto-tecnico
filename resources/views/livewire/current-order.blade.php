@@ -1,4 +1,4 @@
-<div id="current_order" wire:poll.1500ms="fetchData" class="relative w-full overflow-x-auto shadow-md rounded-lg">
+<div id="current_order" wire:poll.3s="fetchData" class="relative w-full overflow-x-auto shadow-md rounded-lg">
     <table class="w-full h-fit text-sm text-left text-gray-200">
         <thead class="text-xs uppercase bg-gray-700 text-gray-400">
             <tr>

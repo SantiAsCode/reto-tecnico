@@ -15,5 +15,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RestaurantController::class, 'index']);
-
-Route::get('/old-dashboard', [RestaurantController::class, 'oldDashboard']);
