@@ -16,13 +16,13 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
 RUN apt-get install -y nodejs
 RUN apt-get install -y npm
 
-WORKDIR /var/www/alegra
+WORKDIR /var/www/prod
 
 COPY . .
 COPY ./deploy-files/restaurant-host.conf /etc/apache2/sites-available/
 COPY ./deploy-files/apache2.conf /etc/apache2/
 
-RUN chown -R www-data:www-data /var/www/alegra
+RUN chown -R www-data:www-data /var/www/prod
 RUN a2ensite restaurant-host
 RUN a2enmod rewrite
 

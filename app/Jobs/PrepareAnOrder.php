@@ -51,7 +51,7 @@ class PrepareAnOrder implements ShouldQueue
                     }
                     
                     // Tries to buy the ingredient at the API market, if it's successfull adds the amount to the ingredient store
-                    $response = Http::get("http://recruitment.alegra.com/api/farmers-market/buy?ingredient={$ingredient->name}");
+                    $response = Http::get("http://api.com");
 
                     Log::channel('store')->info("API Market RESPONSE {$response->status()}");
                     // If it's not successfull waits for 0,2 sec to try again
